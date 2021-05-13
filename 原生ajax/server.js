@@ -53,6 +53,17 @@ app.get('/ie',(request,response)=>{
     response.send("HELLO IE 2");
 });
 
+app.get('/delay',(request,response)=>{
+    //设置响应头 设置允许跨域
+    response.setHeader("Access-Control-Allow-Origin","*")
+    response.setHeader("Access-Control-Allow-Headers","*")
+
+    setTimeout(function(){
+        //设置响应体
+    response.send("延时响应");
+    },3000)
+});
+
 //4.监听端口启动服务
 app.listen(8000,()=>{
     console.log("服务已经启动，8080端口监听中");
