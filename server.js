@@ -53,7 +53,7 @@ app.get('/ie',(request,response)=>{
     response.send("HELLO IE 2");
 });
 
-app.get('/delay',(request,response)=>{
+app.all('/delay',(request,response)=>{
     //设置响应头 设置允许跨域
     response.setHeader("Access-Control-Allow-Origin","*")
     response.setHeader("Access-Control-Allow-Headers","*")
@@ -61,7 +61,7 @@ app.get('/delay',(request,response)=>{
     setTimeout(function(){
         //设置响应体
     response.send("延时响应");
-    },3000)
+    },1000)
 });
 
 //jQuery 服务
